@@ -3,7 +3,6 @@ import './App.css';
 import { InputField } from './components/InputField/InputField';
 import { TodoList } from './components/TodoList/TodoList';
 import { Todo } from './models/models';
-import { DragDropContext } from 'react-beautiful-dnd';
 
 export const App : React.FC = () => {
 
@@ -20,8 +19,7 @@ export const App : React.FC = () => {
       }
   }
 
-  return (
-    <DragDropContext onDragEnd={()=>{}} >
+  return (    
 
     <div className="App">
       <span className='heading'> Taskify </span>
@@ -33,7 +31,5 @@ export const App : React.FC = () => {
         setCompletedTodos={setCompletedTodos}
       />
     </div>
-
-    </DragDropContext>
   );
 }

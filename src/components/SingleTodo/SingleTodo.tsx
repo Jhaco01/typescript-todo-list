@@ -3,7 +3,6 @@ import { Todo } from '../../models/models';
 import { AiFillEdit, AiFillDelete } from 'react-icons/ai'
 import { MdDone } from 'react-icons/md'
 import { useEffect, useRef, useState } from 'react';
-import { Draggable } from 'react-beautiful-dnd';
 
 interface Props {
     index: number,
@@ -47,15 +46,9 @@ export const SingleTodo : React.FC<Props> = ({index, todo, todos, setTodos}) => 
   }
 
   return (
-
-    <Draggable draggableId={todo.id.toString()} index={index} >
-      {(provided)=>(
         <form 
           className="todos__single" 
           onSubmit={(e)=>handleEdit(e,todo.id)} 
-          {...provided.draggableProps}  
-          {...provided.dragHandleProps}
-          ref={provided.innerRef}
         >
 
         {
@@ -88,8 +81,5 @@ export const SingleTodo : React.FC<Props> = ({index, todo, todos, setTodos}) => 
             </span>
         </div>
     </form>
-    )}
-    </Draggable>
-    
-  )
-}
+)}
+
